@@ -36,7 +36,7 @@ export default async function CurrentReadServer() {
         }`;
   try {
     const res = await fetch(
-      "http://localhost:3000/api/proxy/currentlyreading",
+      "https://am-pf-nextjs.vercel.app/api/proxy/currentlyreading",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
