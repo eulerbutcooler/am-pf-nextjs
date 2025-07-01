@@ -1,13 +1,17 @@
-"use client";
-// import { motion } from "motion/react";
+import Image from "next/image";
+
 export default function Mugshot() {
   return (
-    <div className="h-96 w-72 rounded-2xl ml-32 border-3 border-bgdark hover:border-white transition-all duration-150">
-      <img
-        src="/mugshot.jpg"
-        alt="amaan pathan"
-        className="object-cover w-full h-full rounded-2xl"
-      ></img>
+    <div className="relative ml-32 h-96 w-72 rounded-2xl">
+      <div className="group h-full w-full rounded-2xl">
+        <Image
+          src="/mugshot.jpg"
+          alt="amaan pathan"
+          className="h-full w-full rounded-2xl object-cover"
+          width={282}
+          height={378}
+        />
+      </div>
     </div>
   );
 }

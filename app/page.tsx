@@ -1,6 +1,7 @@
 import About from "./components/About";
 import CurrentReadTile from "./components/CurrentReadTile";
 import Mugshot from "./components/Mugshot";
+import Projects from "./components/Projects";
 import Quote from "./components/Quote";
 import Skills from "./components/Skills";
 
@@ -10,14 +11,19 @@ export default function Home() {
       <div>
         <Quote />
       </div>
-      <div className="flex flex-row justify-between mt-20">
-        <div className="flex flex-wrap flex-row">
-          <Mugshot />
-          <About />
+      <div className="flex flex-col">
+        <div className="mt-20 flex flex-row justify-between">
+          <div className="flex flex-row flex-wrap">
+            <Mugshot />
+            <About />
+          </div>
+          <div className="mt-5 flex flex-row">
+            <Skills />
+            <CurrentReadTile />
+          </div>
         </div>
-        <div className="flex flex-row gap-30 mt-5">
-          <Skills />
-          <CurrentReadTile />
+        <div>
+          <Projects />
         </div>
       </div>
     </div>

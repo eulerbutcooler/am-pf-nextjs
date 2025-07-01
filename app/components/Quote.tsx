@@ -1,12 +1,12 @@
 "use client";
 import { motion } from "motion/react";
 
-const text = "Break in the sun till the sun breaks down";
+const text = `Break in the sun till the sun breaks down`;
 const letters = text.split("");
 
 export default function Quote() {
   return (
-    <div className="font-mono text-ogreen pt-4 pb-2 text-center w-full tracking-widest flex flex-wrap justify-center">
+    <div className="text-ogreen flex w-full flex-wrap justify-center pt-4 pb-2 text-center font-mono text-lg tracking-widest">
       {letters.map((letter, index) => (
         <motion.span
           key={index}

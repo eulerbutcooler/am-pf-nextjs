@@ -15,9 +15,12 @@ import {
   SiRedis,
   SiGnubash,
   SiGit,
+  SiTailwindcss,
+  SiDeno,
+  SiNodedotjs,
 } from "react-icons/si";
 
-const skills = [
+export const skills = [
   {
     title: "Javascript",
     icon: <SiJavascript className="h-6 w-6 text-white" />,
@@ -29,44 +32,73 @@ const skills = [
   { title: "Python", icon: <SiPython className="h-6 w-6 text-white" /> },
   { title: "Docker", icon: <SiDocker className="h-6 w-6 text-white" /> },
   { title: "React", icon: <SiReact className="h-6 w-6 text-white" /> },
-  { title: "Nextjs", icon: <SiNextdotjs className="h-6 w-6 text-white" /> },
+  { title: "Next.js", icon: <SiNextdotjs className="h-6 w-6 text-white" /> },
+  {
+    title: "TailwindCSS",
+    icon: <SiTailwindcss className="h-6 w-6 text-white" />,
+  },
+  { title: "Deno", icon: <SiDeno className="h-6 w-6 text-white" /> },
+  { title: "Nodejs", icon: <SiNodedotjs className="h-6 w-6 text-white" /> },
   { title: "Hono", icon: <SiHono className="h-6 w-6 text-white" /> },
   { title: "Express", icon: <SiExpress className="h-6 w-6 text-white" /> },
-  { title: "Mongodb", icon: <SiMongodb className="h-6 w-6 text-white" /> },
+  { title: "MongoDB", icon: <SiMongodb className="h-6 w-6 text-white" /> },
   { title: "Postgres", icon: <SiPostgresql className="h-6 w-6 text-white" /> },
   { title: "Redis", icon: <SiRedis className="h-6 w-6 text-white" /> },
   { title: "Bash", icon: <SiGnubash className="h-6 w-6 text-white" /> },
   { title: "Git", icon: <SiGit className="h-6 w-6 text-white" /> },
 ];
 
-const duplicatedSkills = [...skills, ...skills, ...skills];
-
 export default function Skills() {
   return (
-    <div className="relative h-96 overflow-hidden bg-bgdark">
-      {/* Top gradient */}
-      <div className="pointer-events-none absolute top-0 left-0 w-full h-16 z-10 bg-gradient-to-b from-bgdark to-transparent" />
-      {/* Bottom gradient */}
-      <div className="pointer-events-none absolute bottom-0 left-0 w-full h-16 z-10 bg-gradient-to-t from-bgdark to-transparent" />
+    <div className="bg-bgdark relative h-96 w-full overflow-hidden text-center font-sans">
+      <div className="from-bgdark pointer-events-none absolute top-0 z-10 h-24 w-full bg-gradient-to-b to-transparent" />
+      <div className="from-bgdark pointer-events-none absolute bottom-0 z-10 h-24 w-full bg-gradient-to-t to-transparent" />
+
       <motion.div
-        className="font-sans flex flex-col gap-4 text-2xl px-2"
-        animate={{ y: ["0%", "-33.3333%"] }}
+        whileHover={{
+          transition: {
+            duration: 35,
+            ease: "linear",
+            repeat: Infinity,
+          },
+        }}
+        className="w-full"
+        animate={{
+          y: ["0%", "-50%"],
+        }}
         transition={{
-          duration: 20,
+          duration: 25,
           ease: "linear",
           repeat: Infinity,
         }}
       >
-        {duplicatedSkills.map(({ title, icon }, i) => (
-          <motion.div
-            key={i}
-            className="flex items-center gap-3 text-white"
-            whileHover={{ scale: 1.1 }}
-          >
-            {icon}
-            <span>{title}</span>
-          </motion.div>
-        ))}
+        <div className="flex flex-col gap-6 px-6 py-3">
+          {skills.map(({ title, icon }, i) => (
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 200, damping: 10 }}
+              key={i}
+              className="flex shrink-0 items-center gap-4 text-2xl text-white"
+            >
+              {icon}
+              <span className="whitespace-nowrap">{title}</span>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="flex flex-col gap-6 px-6 py-3">
+          {skills.map(({ title, icon }, i) => (
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 200, damping: 10 }}
+              key={`duplicate-${i}`}
+              className="flex shrink-0 items-center gap-4 text-2xl text-white"
+            >
+              {icon}
+              <span className="whitespace-nowrap">{title}</span>
+            </motion.div>
+          ))}
+        </div>
       </motion.div>
     </div>
   );

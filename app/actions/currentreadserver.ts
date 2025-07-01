@@ -9,9 +9,9 @@ interface HardcoverResponse {
               title: string;
               image: { url: string };
             };
-          }
+          },
         ];
-      }
+      },
     ];
   };
   errors?: [{ message: string }];
@@ -42,10 +42,11 @@ export default async function CurrentReadServer() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query }),
         next: { revalidate: 2592000 },
-      }
+      },
     );
     const data: HardcoverResponse = await res.json();
     const bookData = data?.data?.me?.[0]?.user_books?.[0]?.book ?? null;
+    console.log("Hardcover response", data);
     return bookData;
   } catch (err) {
     console.error(err);

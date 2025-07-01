@@ -1,4 +1,5 @@
 "use server";
+import Image from "next/image";
 import CurrentReadServer from "../actions/currentreadserver";
 export default async function CurrentReadTile() {
   const bookdetails = await CurrentReadServer();
@@ -8,10 +9,11 @@ export default async function CurrentReadTile() {
   return (
     <div>
       <div className="mr-32">
-        <img
+        <Image
           src={bookdetails.image?.url}
           alt={bookdetails.title}
-          width={"120px"}
+          width={270}
+          height={200}
         />
       </div>
     </div>
