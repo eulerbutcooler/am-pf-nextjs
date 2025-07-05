@@ -2,6 +2,7 @@ import { SiGithub } from "react-icons/si";
 import { Globe } from "lucide-react";
 import { techIcons } from "../utils/tech";
 import React from "react";
+import Image from "next/image";
 
 interface ProjectTile {
   title: string;
@@ -15,7 +16,9 @@ interface ProjectTile {
 export default function ProjectTile(project: ProjectTile) {
   return (
     <div className="relative mx-10 flex h-96 w-80 flex-col overflow-hidden rounded-2xl border border-white/30 bg-transparent p-0 font-sans transition-shadow duration-300 hover:shadow-[0_0_16px_2px_rgba(255,255,255,0.5)]">
-      <img
+      <Image
+        width={480}
+        height={480}
         src={project.img}
         alt={project.title}
         className="mx-auto h-40 w-full rounded-t-2xl object-cover px-2 pt-2"

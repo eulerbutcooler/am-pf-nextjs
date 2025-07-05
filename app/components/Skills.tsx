@@ -11,7 +11,7 @@ export default function Skills() {
   return (
     <div className="bg-bgdark relative flex h-96 w-full flex-row items-start overflow-hidden text-center font-sans">
       <div className="z-30 mt-4 mr-2 ml-4 font-sans text-xl font-bold tracking-widest text-white [writing-mode:sideways-lr]">
-        TECH I'VE USED
+        TECH I&apos;VE USED
       </div>
       <div className="from-bgdark pointer-events-none absolute top-0 z-10 h-24 w-full bg-gradient-to-b to-transparent" />
       <div className="from-bgdark pointer-events-none absolute bottom-0 z-10 h-24 w-full bg-gradient-to-t to-transparent" />
