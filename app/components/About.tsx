@@ -10,7 +10,7 @@ export default function About() {
       </span>
       <a
         href="Resume.pdf"
-        className="w-64 rounded-full bg-white py-2 text-center text-2xl font-extrabold text-black transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_5px_white] active:scale-100"
+        className="my-1 w-64 rounded-full bg-white text-center text-2xl font-extrabold text-black transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_5px_white] active:scale-100"
         target="_blank"
         rel="noopener noreferrer"
       >

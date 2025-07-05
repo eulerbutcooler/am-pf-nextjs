@@ -7,17 +7,17 @@ import Skills from "./components/Skills";
 
 export default function Home() {
   return (
-    <div className="bg-bgdark h-screen w-screen">
+    <div className="bg-bgdark min-h-screen w-full">
       <div>
         <Quote />
       </div>
       <div className="flex flex-col">
-        <div className="mt-20 flex flex-row justify-between">
-          <div className="flex flex-row flex-wrap">
+        <div className="mt-10 flex flex-row justify-between">
+          <div className="flex flex-row">
             <Mugshot />
             <About />
           </div>
-          <div className="mt-5 flex flex-row">
+          <div className="flex flex-row justify-around">
             <Skills />
             <CurrentReadTile />
           </div>

@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     dynamicIO: true,
   },
   images: {
-    remotePatterns: [new URL("https://assets.hardcover.app/external_data/**")],
+    remotePatterns: [new URL("https://assets.hardcover.app/**")],
   },
 };
 

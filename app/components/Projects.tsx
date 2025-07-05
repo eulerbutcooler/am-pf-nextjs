@@ -2,7 +2,7 @@ import ProjectTile from "./ProjectTile";
 
 export default function Projects() {
   return (
-    <div className="mt-20 flex flex-row justify-center-safe gap-30">
+    <div className="mt-10 flex flex-row justify-center-safe gap-30">
       <ProjectTile
         title="PRISM"
         img="/prism.png"

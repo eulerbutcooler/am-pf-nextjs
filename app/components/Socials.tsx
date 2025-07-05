@@ -6,15 +6,15 @@ export default function Socials() {
   const socials = [
     {
       href: "https://twitter.com/elrbtclr",
-      icon: <SiX className="h-7 w-7 text-black" />,
+      icon: <SiX className="h-6 w-6 text-black" />,
     },
     {
       href: "https://github.com/eulerbutcooler",
-      icon: <SiGithub className="h-7 w-7 text-black" />,
+      icon: <SiGithub className="h-6 w-6 text-black" />,
     },
     {
       href: "https://linkedin.com/in/amaan-pathan",
-      icon: <SiLinkedin className="h-7 w-7 text-black" />,
+      icon: <SiLinkedin className="h-6 w-6 text-black" />,
     },
   ];
 
@@ -26,7 +26,7 @@ export default function Socials() {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-white transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_5px_white] active:scale-100"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-white transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_5px_white] active:scale-100"
         >
           {icon}
         </a>

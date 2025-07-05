@@ -24,7 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${xanh.variable} ${incol.variable}`}>{children}</body>
+      <body className={`${xanh.variable} ${incol.variable} min-h-screen`}>
+        {children}
+      </body>
     </html>
   );
 }

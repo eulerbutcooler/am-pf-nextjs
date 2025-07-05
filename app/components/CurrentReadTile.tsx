@@ -9,15 +9,16 @@ export default async function CurrentReadTile() {
   }
   return (
     <div>
-      <div className="mt-5 mr-32 flex flex-row items-start">
+      <div className="mt-5 flex flex-row items-start">
         <div className="mr-2 font-sans text-xl font-bold tracking-widest [writing-mode:sideways-lr]">
           CURRENT READ
         </div>
         <Image
           src={bookdetails.image?.url}
           alt={bookdetails.title}
-          width={260}
-          height={160}
+          width={180}
+          height={180}
+          className="mr-10 h-44 w-44"
         />
       </div>
     </div>
