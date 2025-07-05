@@ -1,56 +1,18 @@
 "use client";
-
+import React from "react";
 import { motion } from "framer-motion";
-import {
-  SiJavascript,
-  SiTypescript,
-  SiPython,
-  SiDocker,
-  SiReact,
-  SiNextdotjs,
-  SiHono,
-  SiExpress,
-  SiMongodb,
-  SiPostgresql,
-  SiRedis,
-  SiGnubash,
-  SiGit,
-  SiTailwindcss,
-  SiDeno,
-  SiNodedotjs,
-} from "react-icons/si";
-
-export const skills = [
-  {
-    title: "Javascript",
-    icon: <SiJavascript className="h-6 w-6 text-white" />,
-  },
-  {
-    title: "Typescript",
-    icon: <SiTypescript className="h-6 w-6 text-white" />,
-  },
-  { title: "Python", icon: <SiPython className="h-6 w-6 text-white" /> },
-  { title: "Docker", icon: <SiDocker className="h-6 w-6 text-white" /> },
-  { title: "React", icon: <SiReact className="h-6 w-6 text-white" /> },
-  { title: "Next.js", icon: <SiNextdotjs className="h-6 w-6 text-white" /> },
-  {
-    title: "TailwindCSS",
-    icon: <SiTailwindcss className="h-6 w-6 text-white" />,
-  },
-  { title: "Deno", icon: <SiDeno className="h-6 w-6 text-white" /> },
-  { title: "Nodejs", icon: <SiNodedotjs className="h-6 w-6 text-white" /> },
-  { title: "Hono", icon: <SiHono className="h-6 w-6 text-white" /> },
-  { title: "Express", icon: <SiExpress className="h-6 w-6 text-white" /> },
-  { title: "MongoDB", icon: <SiMongodb className="h-6 w-6 text-white" /> },
-  { title: "Postgres", icon: <SiPostgresql className="h-6 w-6 text-white" /> },
-  { title: "Redis", icon: <SiRedis className="h-6 w-6 text-white" /> },
-  { title: "Bash", icon: <SiGnubash className="h-6 w-6 text-white" /> },
-  { title: "Git", icon: <SiGit className="h-6 w-6 text-white" /> },
-];
+import { techIcons } from "../utils/tech";
+const skills = Object.entries(techIcons).map(([title, icon]) => ({
+  title,
+  icon,
+}));
 
 export default function Skills() {
   return (
-    <div className="bg-bgdark relative h-96 w-full overflow-hidden text-center font-sans">
+    <div className="bg-bgdark relative flex h-96 w-full flex-row items-start overflow-hidden text-center font-sans">
+      <div className="z-30 mt-4 mr-2 ml-4 font-sans text-xl font-bold tracking-widest text-white [writing-mode:sideways-lr]">
+        TECH I'VE USED
+      </div>
       <div className="from-bgdark pointer-events-none absolute top-0 z-10 h-24 w-full bg-gradient-to-b to-transparent" />
       <div className="from-bgdark pointer-events-none absolute bottom-0 z-10 h-24 w-full bg-gradient-to-t to-transparent" />
 
@@ -80,7 +42,7 @@ export default function Skills() {
               key={i}
               className="flex shrink-0 items-center gap-4 text-2xl text-white"
             >
-              {icon}
+              {React.cloneElement(icon, { className: "h-6 w-6 text-white" })}
               <span className="whitespace-nowrap">{title}</span>
             </motion.div>
           ))}
@@ -94,7 +56,7 @@ export default function Skills() {
               key={`duplicate-${i}`}
               className="flex shrink-0 items-center gap-4 text-2xl text-white"
             >
-              {icon}
+              {React.cloneElement(icon, { className: "h-6 w-6 text-white" })}
               <span className="whitespace-nowrap">{title}</span>
             </motion.div>
           ))}

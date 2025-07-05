@@ -1,7 +1,6 @@
 "use client";
 
 import { SiX, SiGithub, SiLinkedin } from "react-icons/si";
-import { motion } from "motion/react";
 
 export default function Socials() {
   const socials = [
@@ -22,24 +21,15 @@ export default function Socials() {
   return (
     <div className="flex flex-row gap-10">
       {socials.map(({ href, icon }, index) => (
-        <motion.a
-          whileHover={{
-            boxShadow: "0 0 20px 5px white",
-          }}
-          transition={{
-            type: "spring",
-            stiffness: 200,
-            damping: 10,
-          }}
+        <a
           key={index}
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="h-12 w-12 bg-white rounded-full flex items-center justify-center
-                       hover:scale-110 hover:shadow-[0_0_20px_5px_white] transition-all duration-300"
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-white transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_5px_white] active:scale-100"
         >
           {icon}
-        </motion.a>
+        </a>
       ))}
     </div>
   );

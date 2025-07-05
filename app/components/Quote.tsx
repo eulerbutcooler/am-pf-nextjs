@@ -6,14 +6,14 @@ const letters = text.split("");
 
 export default function Quote() {
   return (
-    <div className="text-ogreen flex w-full flex-wrap justify-center pt-4 pb-2 text-center font-mono text-lg tracking-widest">
+    <div className="text-ogreen flex w-full flex-wrap justify-center pt-4 pb-2 text-center font-mono text-lg font-bold tracking-widest">
       {letters.map((letter, index) => (
         <motion.span
           key={index}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
-            delay: index * 0.05, // Adjust speed here
+            delay: index * 0.05,
             duration: 0.01,
           }}
         >
