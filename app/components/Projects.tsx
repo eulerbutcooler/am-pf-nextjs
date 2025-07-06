@@ -23,7 +23,7 @@ export default function Projects() {
         title="GUIDEFOX"
         img="/guidefox.png"
         ghlink="https://github.com/eulerbutcooler/bluewave-onboarding"
-        livelink="https://guidefox-demo.bluewavelabs.ca/"
+        livelink="https://guidefox.io/"
         about="Contributed to Guidefox by Bluewave labs, Canada. Refactored the backend, wrote tests and added validations"
         hashtags={["Express", "React", "Javascript", "Zod"]}
       ></ProjectTile>
