@@ -42,7 +42,9 @@ export default function ProjectTile(project: ProjectTile) {
             </a>
           </div>
         </div>
-        <div className="mt-4 h-24 text-xs sm:text-sm">{project.about}</div>
+        <div className="mt-4 h-24 text-xs text-white sm:text-sm">
+          {project.about}
+        </div>
         <div className="mt-4 flex flex-row flex-wrap items-start gap-2 sm:gap-3">
           {project.hashtags.map((tag, idx) => (
             <span
