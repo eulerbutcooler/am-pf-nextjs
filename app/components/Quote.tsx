@@ -6,7 +6,7 @@ const letters = text.split("");
 
 export default function Quote() {
   return (
-    <div className="text-ogreen flex w-full flex-wrap justify-center pt-4 pb-2 text-center font-mono text-lg font-bold tracking-widest">
+    <div className="text-ogreen flex w-full justify-center pt-4 pb-2 text-center font-mono text-sm font-bold tracking-widest sm:text-lg">
       {letters.map((letter, index) => (
         <motion.span
           key={index}

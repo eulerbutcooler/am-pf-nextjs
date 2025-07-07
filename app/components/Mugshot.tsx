@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Mugshot() {
   return (
-    <div className="relative ml-32 h-96 w-72 rounded-2xl">
+    <div className="relative mx-auto h-64 w-48 rounded-2xl sm:ml-24 sm:h-80 sm:w-60">
       <div className="group h-full w-full rounded-2xl">
         <Image
           src="/mugshot.jpg"

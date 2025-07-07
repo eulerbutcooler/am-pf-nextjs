@@ -18,6 +18,7 @@ import {
   SiNodedotjs,
   SiAxios,
   SiZod,
+  SiNginx,
 } from "react-icons/si";
 
 export const techIcons: Record<string, JSX.Element> = {
@@ -39,4 +40,5 @@ export const techIcons: Record<string, JSX.Element> = {
   Redis: <SiRedis />,
   Bash: <SiGnubash />,
   Git: <SiGit />,
+  Nginx: <SiNginx />,
 };

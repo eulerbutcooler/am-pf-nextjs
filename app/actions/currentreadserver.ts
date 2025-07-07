@@ -19,6 +19,7 @@ interface HardcoverResponse {
 
 export default async function CurrentReadServer() {
   "use cache";
+
   const query = `
         query ListCurrentBooks {
           me {
