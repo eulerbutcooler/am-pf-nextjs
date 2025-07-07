@@ -16,7 +16,7 @@ interface ProjectTile {
 
 export default function ProjectTile(project: ProjectTile) {
   return (
-    <div className="relative flex h-[26rem] w-72 flex-shrink-0 snap-center flex-col overflow-hidden rounded-2xl border border-white/30 bg-transparent p-0 font-sans transition-shadow duration-300 hover:shadow-[0_0_16px_2px_rgba(255,255,255,0.5)] sm:mx-10 sm:w-80">
+    <div className="relative flex h-[25rem] w-72 flex-shrink-0 snap-center flex-col overflow-hidden rounded-2xl border border-white/30 bg-transparent p-0 font-sans transition-shadow duration-300 hover:shadow-[0_0_16px_2px_rgba(255,255,255,0.5)] sm:mx-10 sm:w-80">
       <Image
         width={480}
         height={320}
