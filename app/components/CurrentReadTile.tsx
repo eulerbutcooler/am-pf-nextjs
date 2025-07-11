@@ -25,7 +25,7 @@ export default async function CurrentReadTile() {
 
       {/* Desktop ka layout */}
       <div className="mt-5 hidden flex-row items-start sm:flex">
-        <div className="mr-4 font-sans text-xl font-bold tracking-widest [writing-mode:sideways-lr]">
+        <div className="mr-4 font-sans text-xl font-bold tracking-widest text-white [writing-mode:sideways-lr]">
           CURRENT READ
         </div>
         <Image

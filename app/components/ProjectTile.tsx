@@ -27,7 +27,7 @@ export default function ProjectTile(project: ProjectTile) {
       <div className="flex flex-1 flex-col justify-between p-4 sm:p-6">
         <div className="flex flex-row items-center justify-between text-xl sm:text-2xl">
           <div className="font-bold text-white">{project.title}</div>
-          <div className="flex flex-row px-2">
+          <div className="flex flex-row px-2 text-white">
             <a
               href={project.ghlink}
               className="px-1 transition-transform duration-200 hover:scale-110 active:scale-100 sm:px-2"
