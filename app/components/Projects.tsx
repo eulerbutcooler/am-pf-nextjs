@@ -20,7 +20,7 @@ export default function Projects() {
       title: "MAIDAAN",
       img: "/maidaan.png",
       ghlink: "https://github.com/eulerbutcooler/Maidaan-Extra-Cool",
-      livelink: "https://prism2025.tech",
+      livelink: "https://maidaan-extra-cool.vercel.app/",
       about:
         "A social sports event management platform enabling organization to host tournaments and players to participate seamlessly. Worked on sign-in flow and added UI improvements.",
       hashtags: ["TailwindCSS", "Axios", "React", "Typescript"],
