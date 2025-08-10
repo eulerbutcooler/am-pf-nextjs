@@ -8,6 +8,15 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "WIKISILLYGOOSE",
+      img: "/wsg.png",
+      ghlink: "https://github.com/eulerbutcooler/wikisillygoose",
+      livelink: "https://wikisillygoose.eulerbutcooler.tech/",
+      about:
+        "A fun project that lets you find interesting places to visit around the place you clicked. Randomized so you get a new place everytime.",
+      hashtags: ["Nextjs", "Gemini", "ThreeJS", "Vercel"],
+    },
+    {
       title: "PRISM",
       img: "/prism.png",
       ghlink: "https://github.com/eulerbutcooler/prism-backend",
@@ -97,7 +106,7 @@ export default function Projects() {
       </div>
 
       {/* Desktop layout */}
-      <div className="hidden flex-row justify-center gap-30 sm:flex">
+      <div className="hidden flex-row sm:flex">
         {projects.map((project) => (
           <ProjectTile key={project.title} {...project} />
         ))}

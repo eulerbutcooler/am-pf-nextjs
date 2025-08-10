@@ -86,7 +86,7 @@ export default function PageSkeleton() {
           <div className="relative sm:hidden">
             <div className="flex w-full justify-center overflow-hidden">
               <div className="flex">
-                {Array.from({ length: 3 }).map((_, i) => (
+                {Array.from({ length: 4 }).map((_, i) => (
                   <div
                     key={i}
                     className="relative mx-4 flex h-96 w-72 flex-shrink-0 flex-col overflow-hidden rounded-2xl border border-gray-600 bg-gray-800 p-0"
@@ -121,7 +121,7 @@ export default function PageSkeleton() {
 
             {/* Dots indicator skeleton */}
             <div className="mt-4 flex justify-center gap-2">
-              {Array.from({ length: 3 }).map((_, index) => (
+              {Array.from({ length: 4 }).map((_, index) => (
                 <div
                   key={index}
                   className={`h-2 w-2 rounded-full ${
@@ -134,7 +134,7 @@ export default function PageSkeleton() {
 
           {/* Desktop centered layout */}
           <div className="hidden gap-8 sm:flex sm:justify-center sm:gap-10">
-            {Array.from({ length: 3 }).map((_, i) => (
+            {Array.from({ length: 4 }).map((_, i) => (
               <div
                 key={i}
                 className="relative mx-auto flex h-96 w-full max-w-80 flex-col overflow-hidden rounded-2xl border border-gray-700 bg-gray-800 p-0 sm:mx-10 sm:w-80"

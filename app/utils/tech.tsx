@@ -19,6 +19,9 @@ import {
   SiAxios,
   SiZod,
   SiNginx,
+  SiGooglegemini,
+  SiThreedotjs,
+  SiVercel,
 } from "react-icons/si";
 
 export const techIcons: Record<string, JSX.Element> = {
@@ -28,7 +31,9 @@ export const techIcons: Record<string, JSX.Element> = {
   Docker: <SiDocker />,
   React: <SiReact />,
   Nextjs: <SiNextdotjs />,
+  Vercel: <SiVercel />,
   TailwindCSS: <SiTailwindcss />,
+  ThreeJS: <SiThreedotjs />,
   Deno: <SiDeno />,
   Nodejs: <SiNodedotjs />,
   Hono: <SiHono />,
@@ -41,4 +46,5 @@ export const techIcons: Record<string, JSX.Element> = {
   Bash: <SiGnubash />,
   Git: <SiGit />,
   Nginx: <SiNginx />,
+  Gemini: <SiGooglegemini />,
 };
