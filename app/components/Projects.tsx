@@ -106,7 +106,7 @@ export default function Projects() {
       </div>
 
       {/* Desktop layout */}
-      <div className="hidden flex-row sm:flex">
+      <div className="hidden flex-row justify-around sm:flex">
         {projects.map((project) => (
           <ProjectTile key={project.title} {...project} />
         ))}
