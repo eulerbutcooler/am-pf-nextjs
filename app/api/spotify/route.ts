@@ -32,13 +32,17 @@ export async function GET() {
         uri: t.uri,
         artists: t.artists.map((a: SpotifyArtist) => a.name),
       })),
-      now_playing: now
-        ? {
-            is_playing: now.is_playing,
-            name: now.item?.name,
-            artists: now.item?.artists?.map((a: SpotifyArtist) => a.name),
-          }
-        : null,
+      now_playing:
+        now && now.item
+          ? {
+              is_playing: now.is_playing,
+              name: now.item.name,
+              artists:
+                now.item.artists?.map((a: SpotifyArtist) => a.name) || [],
+              uri: now.item.uri,
+              id: now.item.id,
+            }
+          : null,
       followed_artists: followed.artists?.items?.map(
         (a: SpotifyArtist) => a.name,
       ),

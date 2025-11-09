@@ -24,6 +24,8 @@ interface NowPlaying {
   is_playing: boolean;
   name: string;
   artists: string[];
+  uri?: string;
+  id?: string;
 }
 
 interface SpotifyPlayerProps {
@@ -55,6 +57,8 @@ export default function SpotifyPlayer({
             is_playing: true,
             name: track.name,
             artists: track.artists,
+            uri: track.uri,
+            id: track.id,
           });
         }
       }
@@ -125,7 +129,14 @@ export default function SpotifyPlayer({
           <CardContent>
             <div className="flex items-center justify-between">
               <div className="space-y-1">
-                <p className="text-lg font-semibold">{currentPlaying.name}</p>
+                <p className="text-lg font-semibold">
+                  {currentPlaying.name}
+                  {currentPlaying.id && (
+                    <span className="text-muted-foreground ml-2 font-mono text-xs">
+                      ({currentPlaying.id})
+                    </span>
+                  )}
+                </p>
                 <p className="text-muted-foreground text-sm">
                   {currentPlaying.artists.join(", ")}
                 </p>
