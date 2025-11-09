@@ -4,7 +4,7 @@ portfolio
 
 # Spotify Integration – Portfolio API Task
 
-This feature adds a `/spotify` route and related API endpoints to your **Next.js App Router** portfolio website.  
+This feature adds a `/spotify` route and related API endpoints to your portfolio website.  
 It connects to the **Spotify Web API** to display your top tracks, currently playing song, and followed artists — and lets you control playback directly (play or pause).
 
 ---
