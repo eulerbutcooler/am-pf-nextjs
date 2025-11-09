@@ -24,10 +24,11 @@ function basicAuthHeader() {
       )
     );
   }
-  // edge: use btoa
   return (
     "Basic " +
-    (globalThis as any).btoa(`${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`)
+    (globalThis as unknown as { btoa: (str: string) => string }).btoa(
+      `${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`,
+    )
   );
 }
 

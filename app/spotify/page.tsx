@@ -1,26 +1,33 @@
-// app/spotify/page.tsx
-export const revalidate = 30; // ISR
+import { Suspense } from "react";
 
-export default async function SpotifyPage() {
+async function SpotifyData() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/spotify`, {
-    next: { revalidate: 30 },
+    cache: "no-store",
   });
   const data = await res.json();
 
   return (
+    <pre
+      style={{
+        background: "#0b1220",
+        color: "#dbeafe",
+        padding: 16,
+        borderRadius: 8,
+        whiteSpace: "pre-wrap",
+      }}
+    >
+      {JSON.stringify(data, null, 2)}
+    </pre>
+  );
+}
+
+export default function SpotifyPage() {
+  return (
     <main style={{ padding: 24, fontFamily: "system-ui" }}>
       <h1>My Spotify Data</h1>
-      <pre
-        style={{
-          background: "#0b1220",
-          color: "#dbeafe",
-          padding: 16,
-          borderRadius: 8,
-          whiteSpace: "pre-wrap",
-        }}
-      >
-        {JSON.stringify(data, null, 2)}
-      </pre>
+      <Suspense fallback={<div>Loading Spotify data...</div>}>
+        <SpotifyData />
+      </Suspense>
       <p>
         Not authorized? <a href="/api/spotify/login">Login with Spotify</a>
       </p>

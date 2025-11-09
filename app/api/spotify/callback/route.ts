@@ -8,12 +8,10 @@ export async function GET(req: Request) {
     if (!code)
       return NextResponse.json({ error: "Missing code" }, { status: 400 });
 
-    const data = await exchangeCodeForTokens(code);
+    await exchangeCodeForTokens(code);
     return NextResponse.redirect("/", { status: 302 });
-  } catch (err: any) {
-    return NextResponse.json(
-      { error: String(err.message || err) },
-      { status: 500 },
-    );
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

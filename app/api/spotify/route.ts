@@ -1,6 +1,18 @@
 import { NextResponse } from "next/server";
 import { spotifyFetch } from "@/app/lib/spotify";
 
+interface SpotifyArtist {
+  id: string;
+  name: string;
+}
+
+interface SpotifyTrack {
+  id: string;
+  name: string;
+  uri: string;
+  artists: SpotifyArtist[];
+}
+
 export async function GET() {
   try {
     const [topRes, nowRes, followRes] = await Promise.all([
@@ -14,26 +26,29 @@ export async function GET() {
     const followed = await followRes.json();
 
     const payload = {
-      top_tracks: top.items?.map((t: any) => ({
+      top_tracks: top.items?.map((t: SpotifyTrack) => ({
         id: t.id,
         name: t.name,
         uri: t.uri,
-        artists: t.artists.map((a: any) => a.name),
+        artists: t.artists.map((a: SpotifyArtist) => a.name),
       })),
       now_playing: now
         ? {
             is_playing: now.is_playing,
             name: now.item?.name,
-            artists: now.item?.artists?.map((a: any) => a.name),
+            artists: now.item?.artists?.map((a: SpotifyArtist) => a.name),
           }
         : null,
-      followed_artists: followed.artists?.items?.map((a: any) => a.name),
+      followed_artists: followed.artists?.items?.map(
+        (a: SpotifyArtist) => a.name,
+      ),
     };
 
     return NextResponse.json(payload, {
       headers: { "Cache-Control": "s-maxage=30, stale-while-revalidate=60" },
     });
-  } catch (e: any) {
-    return NextResponse.json({ error: e.message }, { status: 500 });
+  } catch (e) {
+    const message = e instanceof Error ? e.message : "Unknown error";
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
